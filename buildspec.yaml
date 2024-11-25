@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+
+  pre_build:
+    commands:
+    #adding executable permission to the sh files
+    - chmod +x install-trafform.sh configure-name-profile.sh apply-terraform.sh
+    #installing terraform
+    - ./install-trafform.sh
+
+      #configuring the enviroment variables to create the crendebtial files
+      #you have to avoide hardcoding the crendetail within this file
+    - ./configure-name-profile.sh
+
+
+
+  build:
+    commands:
+    - ./apply-terraform.sh
+      
+  post_build:
+    commands:
+      - echo Build completed successfully
