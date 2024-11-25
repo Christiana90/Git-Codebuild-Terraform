@@ -8,9 +8,9 @@ phases:
   pre_build:
     commands:
     #adding executable permission to the sh files
-    - chmod +x ./install-trafform.sh ./configure-name-profile.sh ./apply-terraform.sh
+    - chmod +x install-terraform.sh configure-name-profile.sh apply-terraform.sh
     #installing terraform
-    - ./install-trafform.sh
+    - ./install-terraform.sh
 
       #configuring the enviroment variables to create the crendebtial files
       #you have to avoide hardcoding the crendetail within this file
